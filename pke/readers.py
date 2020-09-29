@@ -134,7 +134,7 @@ class RawTextReader(Reader):
         self.language = language
 
         if language is None:
-            self.language = 'en'
+            self.language = 'en_core_web_sm'
 
     def read(self, text, **kwargs):
         """Read the input file and use spacy to pre-process.
