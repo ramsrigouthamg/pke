@@ -207,11 +207,10 @@ class LoadFile(object):
     def normalize_pos_tags(self):
         """Normalizes the PoS tags from udp-penn to UD."""
 
-        if self.language == 'en':
-            # iterate throughout the sentences
-            for i, sentence in enumerate(self.sentences):
-                self.sentences[i].pos = [map_tag('en-ptb', 'universal', tag)
-                                         for tag in sentence.pos]
+        # iterate throughout the sentences
+        for i, sentence in enumerate(self.sentences):
+            self.sentences[i].pos = [map_tag('en-ptb', 'universal', tag)
+                                     for tag in sentence.pos]
 
     def unescape_punctuation_marks(self):
         """Replaces the special punctuation marks produced by CoreNLP."""
