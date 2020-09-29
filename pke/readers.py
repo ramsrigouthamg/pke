@@ -169,7 +169,7 @@ class RawTextReader(Reader):
                     'spacy model is available at https://spacy.io/models.'.format(
                         self.language))
                 spacy_model = spacy.load(
-                    str2spacy('en'), max_length=max_length,
+                    str2spacy('en_core_web_sm'), max_length=max_length,
                     disable=['ner', 'textcat', 'parser'])
             spacy_model.add_pipe(spacy_model.create_pipe('sentencizer'))
 
